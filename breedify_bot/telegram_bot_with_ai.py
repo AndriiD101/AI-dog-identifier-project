@@ -26,8 +26,26 @@ bot = telebot.TeleBot(BOT_TOKEN)
 def generate_code_for_image():
     return ''.join(random.choices(string.digits, k=10))
 
+# Define the file path
+file_path = "users.txt"
+
+# Check if the file exists; if not, create it and write a header
+if not os.path.exists(file_path):
+    with open(file_path, "w", encoding="utf-8") as file:
+        file.write("UserID, Username, FirstName\n")
+
+
 @bot.message_handler(commands=['start', 'restart'])
 def start_command(message):
+    # Extract user details
+    user_id = message.from_user.id
+    username = message.from_user.username if message.from_user.username else "NoUsername"
+    first_name = message.from_user.first_name
+
+    # Append the user details to the file
+    with open(file_path, "a", encoding="utf-8") as file:
+        file.write(f"{user_id}, {username}, {first_name}\n")
+    
     markup = InlineKeyboardMarkup()
     markup.row_width = 1
     markup.add(
