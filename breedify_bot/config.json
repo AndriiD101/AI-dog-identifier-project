@@ -1,7 +1,0 @@
-{
-    "BOT_TOKEN": "7362412830:AAEmc5Y_Ie0dcfMjSJRMrP9C8_MP4EX6tTk",
-    "MODEL_PATH": "/home/jovyan/AI-dog-identifier-project/model_checkpoints/best_model_unfreeze30.h5",
-    "FOLDER_PATH": "/home/jovyan/AI-dog-identifier-project/breedify_bot/images/",
-    "LABEL_PATH": "/home/jovyan/AI-dog-identifier-project/combined_datasets/combined_datasets/test_images",
-    "SAVE_FOLDER_PATH": "/home/jovyan/AI-dog-identifier-project/combined_datasets/combined_datasets/training_images"
-}
